@@ -8,7 +8,7 @@ async function authRoutes(fastify, options) {
 
     // REGISTer
     fastify.post("/register",async (req,reply)=>{
-        reply.send("Register route is running")
+       
         const {name, email, password,role} = req.body;
 
         // Password Hashing
