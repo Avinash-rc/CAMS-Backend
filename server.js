@@ -1,3 +1,6 @@
+// const fastify = require("fastify")({ logger: true });
+const cors = require("@fastify/cors");
+
 const fastify = require('fastify')({ logger: true });
 
 const authRoutes = require("./routes/auth");
@@ -9,6 +12,11 @@ fastify.register(authRoutes, { prefix: "/auth" });
 fastify.register(campRoutes, { prefix: "/camp" });
 fastify.register(beneficiaryRoutes, { prefix: "/beneficiary" });
 fastify.register(aidRoutes, { prefix: "/aid" });
+
+// Enable CORS
+fastify.register(cors, {
+  origin: "*"
+});
 
 fastify.get('/', async (request, reply) => {
   return { message: "CAMS Backend Running" };

@@ -3,7 +3,7 @@ const authorize = require("../middleware/roleMiddleware");
 
 async function campRoutes(fastify, options) {
 
-    fastify.post("/camp",
+    fastify.post("/",
         {
             preHandler: [
                 verifyToken,
@@ -11,13 +11,15 @@ async function campRoutes(fastify, options) {
             ]
         },
         async (req, reply) => {
-            // create camp
+            reply.send({
+                message: "Camp created successfully"
+            });
         }
     );
 
 
     fastify.put(
-        "/camp/:id",
+        "/:id",
         {
             preHandler: [
                 verifyToken,

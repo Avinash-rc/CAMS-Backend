@@ -49,8 +49,8 @@ Thumbs.db
 tmp/
 temp/
 
-# Optional lock files (keep if you want reproducible installs)
+# # Optional lock files (keep if you want reproducible installs)
 
-package-lock.json
-yarn.lock
-pnpm-lock.yaml 
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml 
