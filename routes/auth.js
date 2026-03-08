@@ -8,6 +8,7 @@ async function authRoutes(fastify, options) {
 
     // REGISTer
     fastify.post("/register",async (req,reply)=>{
+        reply.send("Register route is running")
         const {name, email, password,role} = req.body;
 
         // Password Hashing
@@ -32,6 +33,7 @@ async function authRoutes(fastify, options) {
             return reply.code(500).send({ error: "Internal server error" });
 
         }
+            
     })
 
     //LOGIN
