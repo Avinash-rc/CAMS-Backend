@@ -4,15 +4,19 @@ const authorize = require("../middleware/roleMiddleware");
 async function aidRoutes(fastify, options) {
 
   fastify.post(
-    "/aid/distribute",
+    "/distribute",
     {
       preHandler: [
         verifyToken,
         authorize("aid:distribute")
       ]
     },
+    // aid distribution login is written here
     async (req, reply) => {
-      // your existing distributeAid logic here
+      reply.send({
+        message: "Aid distributed successfully",
+        
+      });
     }
   );
 

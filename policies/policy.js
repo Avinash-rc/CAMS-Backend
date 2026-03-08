@@ -8,6 +8,7 @@ const policies = {
     "camp:assignStaff",
     "aid:create",
     "aid:update",
+    "aid:distribute",
     "report:view"
   ],
 
